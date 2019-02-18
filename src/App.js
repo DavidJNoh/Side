@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import deepPurple from "@material-ui/core/colors/deepPurple";
 import red from "@material-ui/core/colors/red";
 import green from "@material-ui/core/colors/green";
 
@@ -23,7 +22,7 @@ const theme = createMuiTheme({
   }
 });
 
-console.log(theme);
+console.log("Theme", theme);
 
 class App extends Component {
   render() {
