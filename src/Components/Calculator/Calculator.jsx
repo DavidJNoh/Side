@@ -94,9 +94,12 @@ export class Calculator extends Component {
     });
   };
 
-  handleSecondPageInput = (value, name) => {
+  handleSecondPageInput = (name, value) => {
     this.setState({
-      [name]: value
+      secondPage: {
+        ...this.state.secondPage,
+        [name]: value
+      }
     });
   };
 
@@ -108,6 +111,15 @@ export class Calculator extends Component {
     return (
       <React.Fragment>
         <Grid container className={classes.container} justify="center">
+          <Grid item xs={12}>
+            <ButtonNav
+              activeStep={activeStep}
+              steps={steps}
+              handleReset={this.handleReset}
+              handleBack={this.handleBack}
+              handleNext={this.handleNext}
+            />
+          </Grid>
           <Grid item xs={8}>
             <Stepper activeStep={activeStep}>
               {steps.map((label, index) => {
@@ -136,15 +148,6 @@ export class Calculator extends Component {
               />
             )}
           </Grid>
-
-          {/* Bottom Buttons */}
-          <ButtonNav
-            activeStep={activeStep}
-            steps={steps}
-            handleReset={this.handleReset}
-            handleBack={this.handleBack}
-            handleNext={this.handleNext}
-          />
         </Grid>
       </React.Fragment>
     );

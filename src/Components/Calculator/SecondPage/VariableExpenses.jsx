@@ -16,7 +16,7 @@ const styles = theme => ({
     useNextVariants: true
   },
   container: {
-    marginTop: "7vh"
+    marginTop: "5vh"
   }
 });
 
@@ -25,6 +25,11 @@ export class VariableExpenses extends Component {
     super(props);
     this.state = {};
   }
+
+  handleInput = (name, event) => {
+    let value = event.target.value;
+    this.props.handleInput(name, value);
+  };
 
   render() {
     const { classes } = this.props;
@@ -44,15 +49,15 @@ export class VariableExpenses extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("vacancy", event)}
+              value={this.props.values.vacancy}
               id="vacancy"
               label="Vacancy"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -64,15 +69,15 @@ export class VariableExpenses extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("repair", event)}
+              value={this.props.values.repair}
               id="repairs"
-              label="Repairs & Maintenance"
+              label="Maintenance"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -84,15 +89,15 @@ export class VariableExpenses extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("capEx", event)}
+              value={this.props.values.capEx}
               id="capEx"
-              label="Capital Expenditures"
+              label="Capital Ex"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -104,15 +109,15 @@ export class VariableExpenses extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("managementFee", event)}
+              value={this.props.values.managementFee}
               id="managementFee"
-              label="Management Fee"
+              label="Management"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {

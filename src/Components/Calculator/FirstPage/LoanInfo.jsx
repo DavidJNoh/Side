@@ -109,8 +109,8 @@ export class LoanInfo extends Component {
                 margin="normal"
                 variant="outlined"
                 InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">%</InputAdornment>
+                  endAdornment: (
+                    <InputAdornment position="end">%</InputAdornment>
                   )
                 }}
                 InputLabelProps={{
@@ -132,8 +132,8 @@ export class LoanInfo extends Component {
                 margin="normal"
                 variant="outlined"
                 InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">%</InputAdornment>
+                  endAdornment: (
+                    <InputAdornment position="end">%</InputAdornment>
                   )
                 }}
                 InputLabelProps={{
@@ -154,8 +154,8 @@ export class LoanInfo extends Component {
                 margin="normal"
                 variant="outlined"
                 InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Points</InputAdornment>
+                  endAdornment: (
+                    <InputAdornment position="end">Points</InputAdornment>
                   )
                 }}
                 InputLabelProps={{
@@ -200,8 +200,8 @@ export class LoanInfo extends Component {
                 margin="normal"
                 variant="outlined"
                 InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Year(s)</InputAdornment>
+                  endAdornment: (
+                    <InputAdornment position="end">Year(s)</InputAdornment>
                   )
                 }}
                 InputLabelProps={{

@@ -16,11 +16,21 @@ const styles = theme => ({
     useNextVariants: true
   },
   container: {
-    marginTop: "7vh"
+    marginTop: "2vh"
   }
 });
 
 export class Income extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleInput = (name, event) => {
+    let value = event.target.value;
+    this.props.handleInput(name, value);
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -39,6 +49,8 @@ export class Income extends Component {
           <Grid item sm={4} md={3} lg={2}>
             <TextField
               required
+              onChange={event => this.handleInput("income", event)}
+              value={this.props.values.income}
               id="grossMonthlyRent"
               label="Total Gross Monthly Income"
               className={classes.textField}

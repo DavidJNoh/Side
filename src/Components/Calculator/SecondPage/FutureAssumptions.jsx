@@ -16,7 +16,7 @@ const styles = theme => ({
     useNextVariants: true
   },
   container: {
-    marginTop: "7vh"
+    marginTop: "5vh"
   }
 });
 
@@ -25,6 +25,11 @@ export class FutureAssumptions extends Component {
     super(props);
     this.state = {};
   }
+
+  handleInput = (name, event) => {
+    let value = event.target.value;
+    this.props.handleInput(name, value);
+  };
 
   render() {
     const { classes } = this.props;
@@ -39,20 +44,20 @@ export class FutureAssumptions extends Component {
         >
           <Grid item xs={12}>
             <Typography className={classes.typography} variant="h4">
-              Future Assumptions
+              Annual Future Assumptions
             </Typography>
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("incomeGrowth", event)}
+              value={this.props.values.incomeGrowth}
               id="anulIncomeGrowth"
-              label="Annual Income Growth"
+              label="Income Growth"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -64,15 +69,15 @@ export class FutureAssumptions extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("propValueGrowth", event)}
+              value={this.props.values.propValueGrowth}
               id="anulPVGrowth"
-              label="Annual PV Growth"
+              label="PV Growth"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -84,15 +89,15 @@ export class FutureAssumptions extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("expenseGrowth", event)}
+              value={this.props.values.expenseGrowth}
               id="anulExpGrowth"
-              label="Annual Expense Growth"
+              label="Expense Growth"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
@@ -104,15 +109,15 @@ export class FutureAssumptions extends Component {
           </Grid>
           <Grid item sm={4} md={3} lg={2}>
             <TextField
+              onChange={event => this.handleInput("salesExpense", event)}
+              value={this.props.values.salesExpense}
               id="salesExpenses"
               label="Sales Expenses"
               className={classes.textField}
               margin="normal"
               variant="outlined"
               InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">%</InputAdornment>
-                )
+                endAdornment: <InputAdornment position="end">%</InputAdornment>
               }}
               InputLabelProps={{
                 style: {
